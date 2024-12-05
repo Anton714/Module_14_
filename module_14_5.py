@@ -38,10 +38,6 @@ in2_kb.insert(in2_button_2)
 in2_kb.insert(in2_button_3)
 in2_kb.insert(in2_button_4)
 
-# @dp.message_handler()
-# async def all_massages(message):
-#     print('Введите команду: /start, чтобы начать общение.')
-
 @dp.message_handler(text='Купить')
 async def get_buying_list(message):
     with open('img (33).png', 'rb') as img:
@@ -184,7 +180,9 @@ async def set_age(message, state):
     add_user(data['username_'], data['email_'], data['age_'])
     await state.finish()
 
-
+@dp.message_handler()
+async def all_massages(message):
+    print('Введите команду: /start, чтобы начать общение.')
 
 if __name__ == "__main__":
     executor.start_polling(dp, skip_updates=True)
