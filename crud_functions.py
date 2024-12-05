@@ -45,16 +45,7 @@ def add_user(username, email, age):
     cursor = connection.cursor()
 
     cursor.execute(f"INSERT INTO Users (username, email, age, balance) VALUES ('{username}', '{email}', '{age}', 1000)")
-    connection.commit()
-
-    # cursor.execute("SELECT COUNT(*) FROM Users")
-    # cursor.execute('INSERT INTO Users (id,username, email, age, balance) VALUES(?,?,?,?,?)',
-    # (id, f'{username}', f'{email}', f'{age}', f'{1000}'))
-    #total_us = cursor.fetchone()[0]+1
-    # cursor.execute(f'''
-    # INSERT INTO Users VALUES('{username}', '{email}', '{age}', '1000')
-    # ''')
-
+      
     connection.commit()
     connection.close()
 
